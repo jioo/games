@@ -1,0 +1,52 @@
+{
+  "name": "game-hub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "nuxt",
+    "build": "nuxt generate",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.3",
+    "axios": "^0.18.0",
+    "material-design-icons-iconfont": "^3.0.3",
+    "nuxt-edge": "^2.2.0-25662130.e115890",
+    "roboto-fontface": "^0.10.0",
+    "vue": "^2.5.17",
+    "vue-infinite-loading": "^2.3.5",
+    "vuetify": "^1.2.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-service": "^3.0.5",
+    "vue-cli-plugin-nuxt-starter-template": "0.0.6",
+    "vue-cli-plugin-vuetify": "^0.2.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
