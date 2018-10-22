@@ -25,7 +25,7 @@ const createStore = () => {
 
         actions: {
             STORE_CACHE_VERSION({ commit, state }) {
-                return this.$axios.get('spaces/me', { params: { token: process.env.publicToken } }).then((res) => {
+                return this.$axios.get('spaces/me', { params: { token: state.params.token } }).then((res) => {
                     commit('SET_CACHE_VERSION', res.space.version)
                 })
             },
