@@ -6,7 +6,7 @@
 
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn flat class="px-5" exact :to="{ path: '/' }" active-class="orange--text">Game List</v-btn>
-                <v-btn flat class="px-5">My Gallery</v-btn>
+                <v-btn flat class="px-5" exact :to="{ path: '/gallery' }" active-class="orange--text">My Gallery</v-btn>
             </v-toolbar-items>
 
             <v-spacer></v-spacer>

@@ -9,7 +9,7 @@ const createStore = () => {
                 token: process.env.publicToken,
                 cv: '',
                 page:  1,
-                per_page: 12
+                per_page: 200
             }
         },
 
@@ -27,6 +27,7 @@ const createStore = () => {
             STORE_CACHE_VERSION({ commit, state }) {
                 return this.$axios.get('spaces/me', { params: { token: state.params.token } }).then((res) => {
                     commit('SET_CACHE_VERSION', res.space.version)
+                    commit('SET_CURRENT_PAGE', 1)
                 })
             },
 

@@ -17,9 +17,14 @@
         <infinite-loading 
             v-if="isStoriesNull" 
             @infinite="infiniteHandler" 
-            ref="infiniteLoading">
+            ref="infiniteLoading"
+            class="mb-3">
             
             <span slot="no-more">&nbsp;</span>
+
+            <v-flex md12 class="text-xs-center" slot="spinner">
+                <v-progress-circular indeterminate color="orange"></v-progress-circular>
+            </v-flex>
 
         </infinite-loading>
     </div> 
@@ -47,7 +52,7 @@ export default {
             const { per_page } = this.$store.state.params
             const next_page = parseInt(this.data.stories.length / per_page) + 1;
 
-            await this.$store.dispatch('UPDATE_CURRENT_PAGE', next_page)
+            this.$store.dispatch('UPDATE_CURRENT_PAGE', next_page)
 
             const result = await this.getList()
             const isExists = stories.findIndex(m => m.id === result.stories[0].id)
@@ -61,14 +66,17 @@ export default {
             }
         },
 
-        async getList () {
-            return await this.$axios.get('stories', { params: this.$store.state.params })
+        getList () {
+            return this.$axios.get('stories', { params: this.$store.state.params })
         }
     },
 
-    async mounted () {
-        await this.$store.dispatch('STORE_CACHE_VERSION')
-        this.data = await this.getList()
+    mounted () {
+        this.$store.dispatch('STORE_CACHE_VERSION')
+
+        this.getList().then(res => {
+            this.data = res 
+        })
     }
 }
 </script>
