@@ -3,8 +3,7 @@
         <v-img
             :src="item.value"
             lazy-src="/place-holder.jpg"
-            height="250"
-            @click.prevent="openGallery()">
+            height="250">
                 <v-layout
                     slot="placeholder"
                     fill-height
@@ -19,12 +18,6 @@
 
 <script>
 export default {
-    props: ['item', 'index'],
-
-    methods: {
-        openGallery () {
-            this.$nuxt.$emit('TRIGGER_CAROUSEL', this.index)
-        }
-    }
+    props: ['item', 'index']
 }
 </script>

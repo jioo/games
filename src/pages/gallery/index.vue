@@ -1,6 +1,6 @@
 <template>
     <section>
-        <v-container grid-list-md fluid>
+        <v-container grid-list-lg>
             <v-layout row wrap mt-4 v-if="!isStoriesNull">
                 <v-flex md12 class="text-xs-center">
                     <v-progress-circular indeterminate color="orange"></v-progress-circular>
@@ -8,11 +8,11 @@
             </v-layout>
 
             <v-layout row wrap>
-                <v-flex d-flex md2 sm3 xs6 v-for="item in data.stories" :key="item.id">
-                    <game-card :item="item.content" />
+                <v-flex md6 xs12 v-for="item in data.stories" :key="item.id">
+                    <gallery-card :item="item.content" />
                 </v-flex>
             </v-layout>
-        </v-container> 
+        </v-container>
 
         <infinite-loading 
             v-if="isStoriesNull" 
@@ -27,12 +27,12 @@
             </v-flex>
 
         </infinite-loading>
-    </section> 
+    </section>
 </template>
 
 <script>
 export default {
-    data() {
+    data () {
         return {
             data: {
                 stories: {}
@@ -65,20 +65,22 @@ export default {
                 $state.complete()
             }
         },
-
+        
         getList () {
             const params = {
-                'filter_query[component][all]': 'game-info',
+                'filter_query[component][all]': 'gallery-info',
                 resolve_relations: 'platforms',
+                resolve_links: 1,
                 ...this.$store.state.params
             }
-            
-            return this.$axios.get('stories', { params })
-        }
+
+            return this.$axios.get('stories', { params: params })
+        },
     },
 
     mounted () {
         this.$store.dispatch('RESET_PAGE_PARAMS')
+        this.$store.dispatch('UPDATE_PER_PAGE', 4)
         this.$store.dispatch('STORE_CACHE_VERSION')
 
         this.getList().then(res => {
@@ -87,4 +89,3 @@ export default {
     }
 }
 </script>
-

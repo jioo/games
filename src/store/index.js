@@ -4,12 +4,10 @@ const createStore = () => {
     return new Vuex.Store({
         state: {
             params: {
-                'filter_query[component][all]': 'game-info',
-                resolve_relations: 'platforms',
                 token: process.env.publicToken,
                 cv: '',
                 page:  1,
-                per_page: 200
+                per_page: 12
             }
         },
 
@@ -20,6 +18,15 @@ const createStore = () => {
 
             SET_CURRENT_PAGE(state, payload) {
                 state.params.page = payload
+            },
+
+            SET_PER_PAGE(state, payload) {
+                state.params.per_page = payload
+            },
+
+            RESET_PAGE_PARAMS(state) {
+                state.params.page = 1
+                state.params.per_page = 12
             }
         },
 
@@ -27,12 +34,19 @@ const createStore = () => {
             STORE_CACHE_VERSION({ commit, state }) {
                 return this.$axios.get('spaces/me', { params: { token: state.params.token } }).then((res) => {
                     commit('SET_CACHE_VERSION', res.space.version)
-                    commit('SET_CURRENT_PAGE', 1)
                 })
             },
 
             UPDATE_CURRENT_PAGE({ commit }, payload) {
                 commit('SET_CURRENT_PAGE', payload)
+            },
+
+            UPDATE_PER_PAGE({ commit }, payload) {
+                commit('SET_PER_PAGE', payload)
+            },
+
+            RESET_PAGE_PARAMS({ commit }) {
+                commit('RESET_PAGE_PARAMS')
             }
         }
     })

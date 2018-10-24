@@ -1,7 +1,7 @@
 <template>
-    <v-layout row wrap>
-        
-    </v-layout>
+    <div>
+        slug
+    </div>
 </template>
 
 <script>
