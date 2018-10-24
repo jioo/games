@@ -9,7 +9,7 @@
 
             <v-layout row wrap>
                 <v-flex d-flex md2 sm3 xs6 v-for="item in data.stories" :key="item.id">
-                    <game-card :item="item.content" />
+                    <game-card :item="item" />
                 </v-flex>
             </v-layout>
         </v-container> 

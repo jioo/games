@@ -9,7 +9,7 @@
 
             <v-layout row wrap>
                 <v-flex md6 xs12 v-for="item in data.stories" :key="item.id">
-                    <gallery-card :item="item.content" />
+                    <gallery-card :item="item" />
                 </v-flex>
             </v-layout>
         </v-container>

@@ -4,21 +4,24 @@
             slot-scope="{ hover }"
             :class="`elevation-${hover ? 24 : 2}`">
             <v-img
-                :src="item.image"
+                :src="item.content.image"
                 lazy-src="/place-holder.jpg"
-                height="250">
+                height="250"
+                style="cursor: pointer;"
+                @click="redirectTo(item)">
                     <v-layout
                         slot="placeholder"
                         fill-height
                         align-center
                         justify-center
-                        ma-0>
+                        ma-0
+                        >
                         <v-progress-circular indeterminate color="orange"></v-progress-circular>
                     </v-layout>
                 </v-img>
 
                 <v-card-text>
-                    <span class="orange--text">{{ item.name }}</span> <br/>
+                    <span class="orange--text">{{ item.content.name }}</span> <br/>
                     {{ platforms }}
                 </v-card-text>
         </v-card>
@@ -31,9 +34,16 @@ export default {
 
     computed: {
         platforms () {
-            return Object.keys(this.item.platforms)
-                .map(m => this.item.platforms[m].name)
+            return Object.keys(this.item.content.platforms)
+                .map(m => this.item.content.platforms[m].name)
                 .join(', ')
+        }
+    },
+
+    methods: {
+        redirectTo (item) {
+            const { slug } = item
+            this.$router.push({ path: `/${slug}` })
         }
     }
 }
