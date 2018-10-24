@@ -1,6 +1,6 @@
 <template>
     <section>
-        <v-container grid-list-lg>
+        <v-container grid-list-md fluid>
             <v-layout row wrap mt-4 v-if="!isStoriesNull">
                 <v-flex md12 class="text-xs-center">
                     <v-progress-circular indeterminate color="orange"></v-progress-circular>
@@ -8,7 +8,7 @@
             </v-layout>
 
             <v-layout row wrap>
-                <v-flex md6 xs12 v-for="item in data.stories" :key="item.id">
+                <v-flex md4 sm6 xs12 v-for="item in data.stories" :key="item.id">
                     <gallery-card :item="item" />
                 </v-flex>
             </v-layout>

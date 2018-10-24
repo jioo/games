@@ -5,8 +5,8 @@
             <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
 
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat class="px-5" exact :to="{ path: '/' }" active-class="orange--text">Game List</v-btn>
-                <v-btn flat class="px-5" exact :to="{ path: '/gallery' }" active-class="orange--text">My Gallery</v-btn>
+                <v-btn flat class="px-5" :to="{ path: '/' }" active-class="orange--text">Game List</v-btn>
+                <v-btn flat class="px-5" :to="{ path: '/gallery' }" active-class="orange--text">My Gallery</v-btn>
             </v-toolbar-items>
 
             <v-spacer></v-spacer>
@@ -26,9 +26,9 @@
 
         <!-- APP CONTENT -->
         <v-content>
-            <v-slide-y-transition mode="out-in">
+            <v-slide-x-transition mode="out-in">
                 <nuxt />
-            </v-slide-y-transition>
+            </v-slide-x-transition>
         </v-content>
         
         <!-- APP FOOTER -->

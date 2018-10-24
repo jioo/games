@@ -1,7 +1,13 @@
 <template>
-    <div>
-        <pre>{{ data }}</pre>
-    </div>
+    <v-container grid-list-md fluid>
+        <v-layout row wrap>
+            <v-flex md12>
+                <no-ssr>
+                    <game-info-card :item="item" />
+                </no-ssr>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
@@ -15,7 +21,7 @@ export default {
     },
 
     async asyncData ({ app, params, store, error }) {
-        store.dispatch('STORE_CACHE_VERSION')
+        await store.dispatch('STORE_CACHE_VERSION')
         const { slug } = params
         
         const apiParams = {
@@ -23,8 +29,8 @@ export default {
             ...store.state.params
         }
 
-        const data = await app.$axios.get(`stories/games/${slug}`, { params: apiParams })
-        return { data }
+        const item = await app.$axios.get(`stories/games/${slug}`, { params: apiParams })
+        return { item }
     }
 }
 </script>

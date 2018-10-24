@@ -20,6 +20,10 @@ module.exports = {
         ]
     },
 
+    css: [
+        '~/assets/css/styles.css'
+    ],
+
     plugins: [
         '~/plugins/axios.js',
         '~/plugins/components.js',
@@ -37,7 +41,10 @@ module.exports = {
     },
 
     markdownit: {
-        injected: true
+        injected: true,
+        preset: 'default',
+        linkify: true,
+        breaks: true
     },
 
     loading: { 
