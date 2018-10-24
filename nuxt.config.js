@@ -28,17 +28,22 @@ module.exports = {
     ],
 
     modules: [
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
+        '@nuxtjs/markdownit'
     ],
     
     axios: {
         baseURL: 'https://api.storyblok.com/v1/cdn/'
     },
 
-    loading: { 
-        color: '#3B8070' 
+    markdownit: {
+        injected: true
     },
 
+    loading: { 
+        color: '#FF9800' 
+    },
+    
     build: {
         babel: {
             presets: [ "@vue/app" ]
