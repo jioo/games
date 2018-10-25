@@ -1,13 +1,17 @@
 <template>
-    <div>
-        <pre>{{ data }}</pre>
-    </div>
+    <v-container grid-list-md fluid>
+        <v-layout row wrap>
+            <v-flex md12>
+                <no-ssr>
+                    <gallery-info-card :item="item" />
+                </no-ssr>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
 export default {
-    scrollToTop: true,
-    
     data () {
         return {
             slug: this.$route.params.slug
@@ -18,14 +22,17 @@ export default {
         store.dispatch('STORE_CACHE_VERSION')
         const { id, slug } = params
         
-        const apiParams = { ...store.state.params }
+        const apiParams = { 
+            resolve_links: 1,
+            ...store.state.params
+        }
 
-        const data = await app.$axios.get(`stories/${id}`, { params: apiParams })
+        const item = await app.$axios.get(`stories/${id}`, { params: apiParams })
 
-        const { cached_url } = data.story.content.game
+        const { cached_url } = item.story.content.game
         if (!cached_url.includes(slug)) error({ statusCode: 404, message: 'Page not found' })
 
-        return { data }
+        return { item }
     }
 }
 </script>

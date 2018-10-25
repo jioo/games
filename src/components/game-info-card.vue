@@ -13,8 +13,7 @@
                     <v-img
                         :src="item.story.content.image"
                         lazy-src="/place-holder.jpg"
-                        max-height="500"
-                        @click="redirectTo(item)">
+                        max-height="500">
                         <v-layout
                             slot="placeholder"
                             fill-height

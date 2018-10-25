@@ -94,8 +94,6 @@ export default {
                 filterParams.platform = platform.map(m => m.uuid).join(",")
             }
 
-            console.log(filterParams)
-
             this.$nuxt.$emit('APPLY_FILTER', filterParams) 
             this.filterForm = false
         }
