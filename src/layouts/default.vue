@@ -2,11 +2,19 @@
     <v-app dark>
         <!-- APP HEADER -->
         <v-toolbar app fixed clipped-left height="80">
-            <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
+            <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
+            <!-- TOP NAVBAR -->
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat class="px-5" :to="{ path: '/' }" active-class="orange--text">Game List</v-btn>
-                <v-btn flat class="px-5" :to="{ path: '/gallery' }" active-class="orange--text">My Gallery</v-btn>
+                <v-btn 
+                    flat
+                    class="px-5"
+                    active-class="orange--text"
+                    v-for="item in navigations.slice(0, 2)"
+                    :key="`nav-${item.name}`"
+                    :to="{ path: item.path }">
+                        {{ item.name }}
+                </v-btn>
             </v-toolbar-items>
 
             <v-spacer></v-spacer>
@@ -18,11 +26,46 @@
             <v-spacer></v-spacer>
 
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat class="px-5">Currently Playing</v-btn>
-                <v-btn flat class="px-5">IGN</v-btn>
+                <v-btn 
+                    flat
+                    class="px-5"
+                    active-class="orange--text"
+                    v-for="item in navigations.slice(2)"
+                    :key="`nav-${item.name}`"
+                    :to="{ path: item.path }">
+                        {{ item.name }}
+                </v-btn>
             </v-toolbar-items>
 
         </v-toolbar>
+
+        <!-- SIDE NAVBAR -->
+        <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up">
+            <v-list class="pa-1">
+                <v-list-tile avatar>
+                    <v-list-tile-avatar>
+                        <img src="~/assets/jio.png">
+                    </v-list-tile-avatar>
+
+                    <v-list-tile-content>
+                        <v-list-tile-title>Gamehub</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
+
+            <v-list>
+                <v-divider></v-divider>
+                <v-list-tile
+                    v-for="item in navigations" 
+                    :key="`side-nav-${item.name}`"
+                    :to="{ path: item.path }"  
+                    v-ripple active-class="orange--text">
+                    <v-list-tile-content>
+                        <v-list-tile-title>{{ item.name }}</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
+        </v-navigation-drawer>
 
         <!-- APP CONTENT -->
         <v-content>
@@ -46,3 +89,19 @@
         </v-footer>
     </v-app>
 </template>
+
+<script>
+export default {
+    data () {
+        return {
+            drawer: false,
+            navigations: [
+                { name: 'Game List', path: '/' },
+                { name: 'My Gallery', path: '/gallery' },
+                { name: 'Currently Playing', path: '/currently-playing' },
+                { name: 'IGN', path: '/ign' }
+            ]
+        }
+    }
+}
+</script>
