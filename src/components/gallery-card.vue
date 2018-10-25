@@ -9,15 +9,15 @@
                 height="250"
                 style="cursor: pointer;"
                 @click.prevent="redirectTo(item)">
-                    <v-layout
-                        slot="placeholder"
-                        fill-height
-                        align-center
-                        justify-center
-                        ma-0>
-                        <v-progress-circular indeterminate color="orange"></v-progress-circular>
-                    </v-layout>
-                </v-img>
+                <v-layout
+                    slot="placeholder"
+                    fill-height
+                    align-center
+                    justify-center
+                    ma-0>
+                    <v-progress-circular indeterminate color="orange"></v-progress-circular>
+                </v-layout>
+            </v-img>
         </v-card>
     </v-hover>
 </template>
