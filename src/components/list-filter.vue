@@ -1,17 +1,18 @@
 <template>
     <section>
-        <v-layout row wrap >
+        <v-layout row wrap class="mb-3">
             <v-flex md6 sm12 xs12>
                 <v-text-field
                     box
                     v-model="filter.search"
                     color="orange"
+                    hide-details
                     placeholder="Search by game title"
                     @keyup.enter.prevent.native="applyFilter()"
                 ></v-text-field>
             </v-flex>
             <v-flex md6 sm12 xs12 :class="{ 'pt-2 mt-1': $vuetify.breakpoint.mdAndUp }">
-                <v-btn @click.prevent="filterForm = !filterForm">
+                <v-btn class="ml-0" @click.prevent="filterForm = !filterForm" >
                     <v-icon>filter_list</v-icon>
                     &nbsp; Filter
                 </v-btn>

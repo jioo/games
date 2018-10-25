@@ -27,8 +27,8 @@ module.exports = {
     plugins: [
         '~/plugins/axios.js',
         '~/plugins/components.js',
-        { src: '~plugins/vue-infinite-loading.js', ssr: false },
         '~/plugins/vuetify.js',
+        { src: '~plugins/vue-infinite-loading.js', ssr: false },
     ],
 
     modules: [
