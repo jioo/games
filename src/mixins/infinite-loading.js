@@ -46,7 +46,7 @@ export default {
         }
         
         return app.$axios.get('stories', { params })
-            .then((res) => {
+            .then((result) => {
                 return { platformItems: result.stories }
             })
     }
