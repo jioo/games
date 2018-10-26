@@ -64,7 +64,7 @@ export default {
             }
             
             console.log(params)
-            return this.$axios.get('stories', { params })
+            return this.$axios.get('/api/stories', { params })
         }
     },
 
@@ -99,7 +99,7 @@ export default {
             ...store.state.params
         }
         
-        return app.$axios.get('stories', { params })
+        return app.$axios.get('/api/stories', { params })
             .then((result) => {
                 return { platformItems: result.stories }
             })

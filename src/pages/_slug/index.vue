@@ -27,7 +27,7 @@ export default {
             ...store.state.params
         }
 
-        const item = await app.$axios.get(`stories/games/${slug}`, { params: apiParams })
+        const item = await app.$axios.get(`/api/stories/games/${slug}`, { params: apiParams })
         return { item }
     }
 }

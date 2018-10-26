@@ -27,7 +27,7 @@ export default {
             ...store.state.params
         }
 
-        const item = await app.$axios.get(`stories/${id}`, { params: apiParams })
+        const item = await app.$axios.get(`/api/stories/${id}`, { params: apiParams })
 
         const { cached_url } = item.story.content.game
         if (!cached_url.includes(slug)) error({ statusCode: 404, message: 'Page not found' })

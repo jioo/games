@@ -21,7 +21,10 @@ module.exports = {
     },
 
     css: [
-        '~/assets/css/styles.css'
+        '~/assets/css/styles.css',
+        'vuetify/dist/vuetify.min.css',
+        'roboto-fontface/css/roboto/roboto-fontface.css',
+        'material-design-icons-iconfont/dist/material-design-icons.css'
     ],
 
     plugins: [
@@ -37,7 +40,12 @@ module.exports = {
     ],
     
     axios: {
-        baseURL: 'https://api.storyblok.com/v1/cdn/'
+        proxy: true,
+        debug: true
+    },
+
+    proxy: {
+        '/api/': { target: 'https://api.storyblok.com/v1/cdn', pathRewrite: {'^/api/': '/'} }
     },
 
     markdownit: {
