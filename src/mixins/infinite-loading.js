@@ -44,8 +44,10 @@ export default {
             sort_by: 'name:asc',
             ...store.state.params
         }
-
-        const result = await app.$axios.get('stories', { params })
-        return { platformItems: result.stories }
+        
+        return app.$axios.get('stories', { params })
+            .then((res) => {
+                return { platformItems: result.stories }
+            })
     }
 }
