@@ -98,7 +98,7 @@ export default {
             navigations: [
                 { name: 'Game List', path: '/' },
                 { name: 'My Gallery', path: '/gallery' },
-                { name: 'Currently Playing', path: '/currently-playing' },
+                { name: 'Top List', path: '/top-list' },
                 { name: 'IGN', path: '/ign' }
             ]
         }
