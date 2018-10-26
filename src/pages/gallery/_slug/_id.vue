@@ -19,7 +19,7 @@ export default {
     },
 
     async asyncData ({ app, params, store, error }) {
-        store.dispatch('STORE_CACHE_VERSION')
+        store.dispatch('UPDATE_CACHE_VERSION')
         const { id, slug } = params
         
         const apiParams = { 
