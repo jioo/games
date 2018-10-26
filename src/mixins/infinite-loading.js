@@ -37,6 +37,7 @@ export default {
     },
 
     async asyncData ({ app, store }) {
+        await store.dispatch('RESET_PAGE_PARAMS')
         await store.dispatch('STORE_CACHE_VERSION')
 
         const params = {
