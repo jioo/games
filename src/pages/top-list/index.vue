@@ -1,7 +1,11 @@
 <template>
     <v-container grid-list-md fluid>
         <v-layout row wrap>
-            <v-flex md6 sm12 xs12 v-for="item in data.stories" :key="item.id">
+            <v-flex 
+                md6 sm12 xs12 
+                v-for="item in data.stories" 
+                :key="item.id"
+            >
                 <no-ssr>
                     <top-list-item :item="item" />
                 </no-ssr>

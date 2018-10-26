@@ -2,17 +2,21 @@
     <v-app dark>
         <!-- APP HEADER -->
         <v-toolbar app fixed clipped-left height="80">
-            <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            
+            <v-toolbar-side-icon 
+                class="hidden-md-and-up" 
+                @click.stop="drawer = !drawer"
+            ></v-toolbar-side-icon>
 
             <!-- TOP NAVBAR -->
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn 
-                    flat
-                    class="px-5"
+                    flat class="px-5"
                     active-class="orange--text"
                     v-for="item in navigations.slice(0, 2)"
                     :key="`nav-${item.name}`"
-                    :to="{ path: item.path }">
+                    :to="{ path: item.path }"
+                >
                         {{ item.name }}
                 </v-btn>
             </v-toolbar-items>
@@ -27,12 +31,12 @@
 
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn 
-                    flat
-                    class="px-5"
+                    flat class="px-5"
                     active-class="orange--text"
                     v-for="item in navigations.slice(2)"
                     :key="`nav-${item.name}`"
-                    :to="{ path: item.path }">
+                    :to="{ path: item.path }"
+                >
                         {{ item.name }}
                 </v-btn>
             </v-toolbar-items>
@@ -59,7 +63,8 @@
                     v-for="item in navigations" 
                     :key="`side-nav-${item.name}`"
                     :to="{ path: item.path }"  
-                    v-ripple active-class="orange--text">
+                    v-ripple active-class="orange--text"
+                >
                     <v-list-tile-content>
                         <v-list-tile-title>{{ item.name }}</v-list-tile-title>
                     </v-list-tile-content>
@@ -75,7 +80,7 @@
         </v-content>
         
         <!-- APP FOOTER -->
-        <v-footer class="py-3 text-xs-center" height="auto">
+        <v-footer class="text-xs-center py-3" height="auto">
             <v-layout>
                 <v-flex xs12>
                     <v-icon small class="white--text">code</v-icon>
