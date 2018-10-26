@@ -40,8 +40,7 @@ module.exports = {
     ],
     
     axios: {
-        proxy: true,
-        debug: true
+        proxy: true
     },
 
     proxy: {

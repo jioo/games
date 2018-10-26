@@ -17,8 +17,7 @@
 <script>
 export default {
     async asyncData ({ app, store }) {
-        await store.dispatch('RESET_PAGE_PARAMS')
-        await store.dispatch('STORE_CACHE_VERSION')
+        await store.dispatch('UPDATE_CACHE_VERSION')
 
         const params = {
             'filter_query[component][all]': 'top-info',

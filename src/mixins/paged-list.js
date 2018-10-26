@@ -69,8 +69,6 @@ export default {
     },
 
     mounted () {
-        this.$store.dispatch('UPDATE_CACHE_VERSION')
-
         this.getList().then(res => {
             this.data = res 
         })
@@ -93,6 +91,8 @@ export default {
     },
 
     async asyncData ({ app, store }) {
+        await store.dispatch('UPDATE_CACHE_VERSION')
+
         const params = {
             'filter_query[component][all]': 'platform',
             sort_by: 'name:asc',
