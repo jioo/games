@@ -31,6 +31,7 @@ module.exports = {
         '~/plugins/axios.js',
         '~/plugins/components.js',
         '~/plugins/vuetify.js',
+        { src: '~plugins/youtube.js', ssr: false },
         { src: '~plugins/vue-infinite-loading.js', ssr: false },
     ],
 

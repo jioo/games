@@ -18,18 +18,26 @@
 
                 <v-flex md8 sm12 xs12 offset-md2>
                     <v-img
+                        v-if="item.story.content.type === 'image'"
                         :src="item.story.content.value"
                         lazy-src="/place-holder.jpg"
-                        max-height="500">
+                        max-height="500"
+                    >
                         <v-layout
                             slot="placeholder"
                             fill-height
                             align-center
                             justify-center
-                            ma-0>
+                            ma-0
+                        >
                             <v-progress-circular indeterminate color="orange"></v-progress-circular>
                         </v-layout>
                     </v-img>
+                    
+                    <youtube
+                        v-else
+                        :video-id="item.story.content.value"
+                    ></youtube>
                 </v-flex>
             </v-layout>
         </v-card-text>
