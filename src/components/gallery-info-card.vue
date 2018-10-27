@@ -1,7 +1,7 @@
 <template>
     <v-card md6>
         <v-toolbar color="orange">
-            <v-btn icon :to="{ path: '/gallery' }">
+            <v-btn icon @click.prevent="goBack()">
                 <v-icon>arrow_back</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
@@ -38,6 +38,12 @@
 
 <script>
 export default {
-    props: ['item']
+    props: ['item'],
+
+    methods: {
+        goBack () {
+            this.$router.go(-1)
+        }
+    }
 }
 </script>

@@ -34,6 +34,13 @@ module.exports = {
         { src: '~plugins/vue-infinite-loading.js', ssr: false },
     ],
 
+    router: {
+        // forcing the scroll position to the top for every routes
+        scrollBehavior: function (to, from, savedPosition) {
+            return { x: 0, y: 0 }
+        }
+    },
+
     modules: [
         '@nuxtjs/axios',
         '@nuxtjs/markdownit'
@@ -44,7 +51,10 @@ module.exports = {
     },
 
     proxy: {
-        '/api/': { target: 'https://api.storyblok.com/v1/cdn', pathRewrite: {'^/api/': '/'} }
+        '/api/': { 
+            target: 'https://api.storyblok.com/v1/cdn', 
+            pathRewrite: {'^/api/': '/'} 
+        }
     },
 
     markdownit: {
@@ -55,7 +65,8 @@ module.exports = {
     },
 
     loading: { 
-        color: '#FF9800' 
+        color: '#FF9800',
+        height: '3px' 
     },
     
     build: {
@@ -63,5 +74,4 @@ module.exports = {
             presets: [ "@vue/app" ]
         }
     }
-
 }

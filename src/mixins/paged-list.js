@@ -63,7 +63,6 @@ export default {
                 ...this.filter
             }
             
-            console.log(params)
             return this.$axios.get('/api/stories', { params })
         }
     },

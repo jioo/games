@@ -1,7 +1,7 @@
 <template>
     <v-card class="elevation-12">
         <v-toolbar color="orange">
-            <v-btn icon :to="{ path: '/' }">
+            <v-btn icon @click.prevent="goBack()">
                 <v-icon>arrow_back</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
@@ -51,10 +51,20 @@ export default {
         }
     },
 
+    methods: {
+        goBack () {
+            this.$router.go(-1)
+        }
+    },
+
     computed: {
         platforms () {
-            return Object.keys(this.item.story.content.platforms)
-                .map(m => this.item.story.content.platforms[m].name)
+            const { platforms } = this.item.story.content
+
+            if (!platforms) return
+
+            return Object.keys(platforms)
+                .map(m => platforms[m].name)
                 .join(', ')
         }
     },

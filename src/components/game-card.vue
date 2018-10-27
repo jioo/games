@@ -33,8 +33,12 @@ export default {
 
     computed: {
         platforms () {
-            return Object.keys(this.item.content.platforms)
-                .map(m => this.item.content.platforms[m].name)
+            const { platforms } = this.item.content
+
+            if (!platforms) return
+
+            return Object.keys(platforms)
+                .map(m => platforms[m].name)
                 .join(', ')
         }
     },
