@@ -82,7 +82,9 @@ export default {
                 search_term: filterParams.search,
                 sort_by: filterParams.sortBy
             }
-
+            
+            this.$refs.infiniteLoading.stateChanger.reset()
+            
             this.getList().then(res => {
                 this.data = res
             })
