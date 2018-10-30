@@ -37,6 +37,7 @@
                     <youtube
                         v-else
                         :video-id="item.story.content.value"
+                        class="youtube-container"
                     ></youtube>
                 </v-flex>
             </v-layout>
