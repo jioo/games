@@ -44,7 +44,8 @@ module.exports = {
 
     modules: [
         '@nuxtjs/axios',
-        '@nuxtjs/markdownit'
+        '@nuxtjs/markdownit',
+        '@nuxtjs/google-analytics'
     ],
     
     axios: {
@@ -63,6 +64,13 @@ module.exports = {
         preset: 'default',
         linkify: true,
         breaks: true
+    },
+
+    'google-analytics': {
+        id: 'UA-113519778-3',
+        autoTracking: {
+            page: process.env.NODE_ENV === 'production' ? true : false
+        }
     },
 
     loading: { 
