@@ -75,6 +75,7 @@ export default {
 
     created () {
         this.$nuxt.$on('APPLY_FILTER', (filterParams) => {
+            const infiniteLoading = this.$refs.infiniteLoading
             
             this.params.page = 1
             this.filter = {
@@ -83,7 +84,7 @@ export default {
                 sort_by: filterParams.sortBy
             }
             
-            this.$refs.infiniteLoading.stateChanger.reset()
+            if (infiniteLoading) infiniteLoading.stateChanger.reset()
             
             this.getList().then(res => {
                 this.data = res

@@ -22,7 +22,7 @@ export default {
         const params = {
             'filter_query[component][all]': 'top-info',
             sort_by: 'published_at:desc',
-            resolve_relations: 'list',
+            resolve_links: 1,
             ...store.state.params
         }
 

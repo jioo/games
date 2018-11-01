@@ -52,10 +52,6 @@ export default {
                 { text: '', value: 'description', sortable: false }
             ]
         }
-    },
-
-    mounted () {
-        console.log(this.$router.history)
     }
 }
 </script>
