@@ -86,7 +86,7 @@
                     <v-icon small class="white--text">code</v-icon>
                     with
                     <v-icon small class="red--text">favorite</v-icon>
-                    by Justine Joshua Quiazon
+                    by <span class="link orange--text" @click.prevent="redirect()">Justine Joshua Quiazon</span>
                     <v-icon small class="white--text">copyright</v-icon>
                     {{ new Date().getFullYear() }}
                 </v-flex>
@@ -107,6 +107,20 @@ export default {
                 { name: 'IGN', path: '/ign' }
             ]
         }
+    },
+
+    methods: {
+        redirect () {
+            window.open('https://jioo.github.io/', '_blank')
+        }
     }
 }
 </script>
+
+<style scoped>
+    .link {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+</style>
+
