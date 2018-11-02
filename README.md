@@ -1,18 +1,28 @@
-## Build Setup
+## Gamehub ##
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+My gaming profile using Nuxt.js, Storyblok &amp; Vue-Cli-3
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+url: <a href="https://jioo.github.io/games" target="_blank">https://jioo.github.io/games</a>
 
-# build for production and launch server
-$ npm run build
-$ npm start
+## Installation
+```
+git clone https://github.com/jioo/games.git
+cd games
 
-# generate static project
-$ npm run generate
+# Install Dependencies
+npm i
+
+# Launch development server with hot-reloading
+npm run serve
+
+# Build the application and generate every route as a HTML file
+npm run build
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## Includes ##
+
+* [Nuxt.js](https://nuxtjs.org/) Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.
+* [Storyblok](https://www.storyblok.com/) Storyblok, a revolutionary API-based & headless CMS.
+* [Vue CLI 3](https://cli.vuejs.org/) Standard Tooling for Vue.js Development.
+* [Vuetify](https://vuetifyjs.com/en/) Material Design Component Framework.
+* [Vue-infinite-loading](https://peachscript.github.io/vue-infinite-loading/) An infinite scroll plugin for Vue.js.
