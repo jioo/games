@@ -7,7 +7,7 @@ export default {
             },
             params: {
                 page: 1,
-                per_page: this.$route.path === '/' ? 12: 4,
+                per_page: this.$route.path === '/' ? 12: 6,
                 resolve_relations: 'platforms',
                 resolve_links: 1,
                 ...this.$store.state.params
