@@ -1,5 +1,7 @@
-module.exports = {
+const axios = require('axios')
 
+module.exports = {
+    
     env: {
         publicToken: 'ErHtwFUjF4vTS2WFkQUBPAtt'
     },
@@ -8,7 +10,7 @@ module.exports = {
 
     head: {
         title: 'Gamehub | Justine Joshua Quiazon',
-        
+
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -38,7 +40,7 @@ module.exports = {
     router: {
         // only add `router.base = '/<repository-name>/'` if `NODE_ENV` is `production`
         base: process.env.NODE_ENV === 'production' ? '/games/' : '/',
-        
+
         // forcing the scroll position to the top for every routes
         scrollBehavior: function (to, from, savedPosition) {
             return { x: 0, y: 0 }
@@ -50,7 +52,7 @@ module.exports = {
         '@nuxtjs/markdownit',
         '@nuxtjs/google-analytics'
     ],
-    
+
     axios: {
         baseURL: 'https://api.storyblok.com/v1/cdn/'
     },
@@ -69,14 +71,55 @@ module.exports = {
         }
     },
 
-    loading: { 
+    loading: {
         color: '#FF9800',
-        height: '3px' 
+        height: '3px'
     },
-    
+
     build: {
         babel: {
-            presets: [ "@vue/app" ]
+            presets: ["@vue/app"]
+        }
+    },
+
+    generate: {
+        routes: function (callback) {
+            const token = `ErHtwFUjF4vTS2WFkQUBPAtt`
+            const per_page = 500
+            const version = `published`
+
+            let page = 1
+            let routes = []
+
+            // Call first Page of the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
+            axios.get(`https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&per_page=${per_page}&page=${page}`).then((res) => {
+                Object.keys(res.data.links).forEach((key) => {
+
+                    let { slug, id } = res.data.links[key]
+
+                    if (slug.includes("games/")) {
+                        // remove the `games/` in slug
+                        slug = slug.replace('games/', '')
+                        
+                        routes.push(`/${slug}`)
+                    }
+
+                    if (slug.includes("gallery/")) {
+                        // sample slug: gallery/monster-hunter-world-gallery-1
+                        // output: gallery/monster-hunter-world/369271
+                        
+                        // get the index of -gallery-
+                        const index = slug.indexOf('-gallery-')
+                        
+                        // slice the string from index 0 to index of `-gallery-`
+                        slug = slug.slice(0, index)
+
+                        routes.push(`/${slug}/${id}`)
+                    }
+                })
+
+                callback(null, routes)
+            })
         }
     }
 }
