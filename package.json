@@ -5,14 +5,17 @@
   "scripts": {
     "serve": "nuxt",
     "build": "nuxt generate",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://jioo.github.io/games",
   "dependencies": {
     "@nuxtjs/axios": "^5.3.3",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/markdownit": "^1.2.2",
     "@nuxtjs/proxy": "^1.2.4",
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "material-design-icons-iconfont": "^3.0.3",
     "nuxt-edge": "^2.2.0-25662130.e115890",
     "roboto-fontface": "^0.10.0",

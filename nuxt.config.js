@@ -36,6 +36,9 @@ module.exports = {
     ],
 
     router: {
+        // only add `router.base = '/<repository-name>/'` if `NODE_ENV` is `production`
+        base: process.env.NODE_ENV === 'production' ? '/games/' : '/',
+        
         // forcing the scroll position to the top for every routes
         scrollBehavior: function (to, from, savedPosition) {
             return { x: 0, y: 0 }
