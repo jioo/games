@@ -77,6 +77,7 @@
             <v-slide-x-transition mode="out-in">
                 <nuxt />
             </v-slide-x-transition>
+            <scroll-to-top />
         </v-content>
         
         <!-- APP FOOTER -->
