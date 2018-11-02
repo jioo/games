@@ -52,14 +52,7 @@ module.exports = {
     ],
     
     axios: {
-        proxy: true
-    },
-
-    proxy: {
-        '/api/': { 
-            target: 'https://api.storyblok.com/v1/cdn', 
-            pathRewrite: {'^/api/': '/'} 
-        }
+        baseURL: 'https://api.storyblok.com/v1/cdn/'
     },
 
     markdownit: {

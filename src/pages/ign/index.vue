@@ -19,7 +19,7 @@ export default {
             ...store.state.params
         }
 
-        return app.$axios.get(`/api/stories`, { params })
+        return app.$axios.get(`stories`, { params })
             .then((data) => {
                 return { 
                     currentlyPlaying: data.stories[0],
