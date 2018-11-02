@@ -3,7 +3,7 @@ const axios = require('axios')
 module.exports = {
     
     env: {
-        publicToken: 'ErHtwFUjF4vTS2WFkQUBPAtt'
+        publicToken: 'sGQamtNrNnpeyp0ac7AuGAtt'
     },
 
     srcDir: 'src/',
@@ -84,7 +84,7 @@ module.exports = {
 
     generate: {
         routes: function (callback) {
-            const token = `ErHtwFUjF4vTS2WFkQUBPAtt`
+            const token = `sGQamtNrNnpeyp0ac7AuGAtt`
             const per_page = 500
             const version = `published`
 
