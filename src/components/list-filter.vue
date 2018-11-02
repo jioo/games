@@ -90,6 +90,7 @@ export default {
         applyFilter () {
             let filterParams = Object.assign({}, this.filter)
             
+            // map platforms array into string
             const { platform } = filterParams
             if(platform.length > 0) {
                 filterParams.platform = platform.map(m => m.uuid).join(",")

@@ -30,6 +30,15 @@
                     >
                         <v-icon x-large>play_circle_filled</v-icon>
                     </v-layout>
+
+                    <v-slide-x-transition mode="out-in">
+                        <div
+                            v-if="hover"
+                            class="d-flex description-reveal orange darken-2 white--text pa-2"
+                        >
+                            {{ item.content.description}}
+                        </div>
+                    </v-slide-x-transition>
             </v-img>
         </v-card>
     </v-hover>
@@ -73,3 +82,14 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .description-reveal {
+        align-items: center;
+        bottom: 0;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 15%;
+    }
+</style>

@@ -1,20 +1,22 @@
 const axios = require('axios')
 
 module.exports = {
-    
     env: {
         publicToken: 'sGQamtNrNnpeyp0ac7AuGAtt'
     },
 
     srcDir: 'src/',
 
+    /*
+    ** Headers of the page
+    */
     head: {
         title: 'Gamehub | Justine Joshua Quiazon',
 
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'My gaming profile' }
+            { hid: 'description', name: 'description', content: 'My gaming profile using Nuxt.js & Storyblok' }
         ],
 
         link: [
@@ -71,17 +73,23 @@ module.exports = {
         }
     },
 
+    /*
+    ** Customize the progress bar
+    */
     loading: {
         color: '#FF9800',
         height: '3px'
     },
 
+    /*
+    ** Build configuration
+    */
     build: {
         babel: {
             presets: ["@vue/app"]
         }
     },
-
+    
     generate: {
         routes: function (callback) {
             const token = `sGQamtNrNnpeyp0ac7AuGAtt`
