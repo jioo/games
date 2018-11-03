@@ -1,28 +1,11 @@
-## Gamehub ##
+# STATIC
 
-My gaming profile using Nuxt.js, Storyblok &amp; Vue-Cli-3
+This directory contains your static files.
+Each file inside this directory is mapped to /.
 
-url: <a href="https://jioo.github.io/games" target="_blank">https://jioo.github.io/games</a>
+Example: /static/robots.txt is mapped as /robots.txt.
 
-## Installation
-```
-git clone https://github.com/jioo/games.git
-cd games
+More information about the usage of this directory in the documentation:
+https://nuxtjs.org/guide/assets#static
 
-# Install Dependencies
-npm i
-
-# Launch development server with hot-reloading
-npm run serve
-
-# Build the application and generate every route as a HTML file
-npm run build
-```
-
-## Includes ##
-
-* [Nuxt.js](https://nuxtjs.org/) Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.
-* [Storyblok](https://www.storyblok.com/) Storyblok, a revolutionary API-based & headless CMS.
-* [Vue CLI 3](https://cli.vuejs.org/) Standard Tooling for Vue.js Development.
-* [Vuetify](https://vuetifyjs.com/en/) Material Design Component Framework.
-* [Vue-infinite-loading](https://peachscript.github.io/vue-infinite-loading/) An infinite scroll plugin for Vue.js.
+**This directory is not required, you can delete it if you don't want to use it.**
