@@ -50,6 +50,7 @@ module.exports = {
     },
 
     modules: [
+        '@nuxtjs/pwa',
         '@nuxtjs/axios',
         '@nuxtjs/markdownit',
         '@nuxtjs/google-analytics'
