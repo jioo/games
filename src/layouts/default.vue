@@ -89,6 +89,7 @@
                     <v-icon small class="red--text">favorite</v-icon>
                     by <span class="link orange--text" @click.prevent="redirect()">Justine Joshua Quiazon</span>
                     <v-icon small class="white--text">copyright</v-icon>
+                    2018 - 
                     {{ new Date().getFullYear() }}
                 </v-flex>
             </v-layout>
