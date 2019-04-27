@@ -6,7 +6,7 @@
     "serve": "nuxt",
     "build": "nuxt generate",
     "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -d dist"
+    "deploy": "cat dist/.nojekyll && gh-pages -d dist"
   },
   "homepage": "https://jioo.github.io/games",
   "dependencies": {
