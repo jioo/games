@@ -1,6 +1,8 @@
 <template>
     <section>
         <v-container grid-list-md fluid>
+            <div class="body-2 pb-3">Accumulated list of all the games I used to play and am currently playing with. :)</div>
+
             <list-filter :platformItems="platformItems" />
 
             <v-layout row wrap>
