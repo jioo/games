@@ -22,7 +22,7 @@
                     </v-layout>
 
                     <v-layout
-                        v-if="item.content.type === 'youtube'" 
+                        v-if="item.content.type !== 'image'" 
                         column 
                         align-center 
                         justify-center 
@@ -54,7 +54,7 @@ export default {
         },
 
         showImageBaseOnType () {
-            const { type, value } = this.item.content
+            const { type, value, previewImage } = this.item.content
             let result = ""
 
             switch (type) {
@@ -64,6 +64,10 @@ export default {
 
                 case 'youtube':
                     result = this.getPreviewImage(value)
+                    break
+
+                case 'facebook':
+                    result = previewImage
                     break
 
                 default:

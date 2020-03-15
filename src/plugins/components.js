@@ -8,6 +8,7 @@ import TopListItem from '~/components/top-list-item.vue'
 import CurrentlyPlaying from '~/components/currently-playing.vue'
 import IgnList from '~/components/ign-list.vue'
 import ScrollToTop from '~/components/scroll-to-top.vue'
+import FbEmbedVideo from '~/components/fb-embed-video.vue'
 
 Vue.component('list-filter', ListFilter)
 Vue.component('gallery-card', GalleryCard)
@@ -18,3 +19,4 @@ Vue.component('top-list-item', TopListItem)
 Vue.component('currently-playing', CurrentlyPlaying)
 Vue.component('ign-list', IgnList)
 Vue.component('scroll-to-top', ScrollToTop)
+Vue.component('fb-embed-video', FbEmbedVideo)

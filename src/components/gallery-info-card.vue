@@ -33,9 +33,14 @@
                             <v-progress-circular indeterminate color="orange"></v-progress-circular>
                         </v-layout>
                     </v-img>
+
+                    <fb-embed-video
+                        v-else-if="item.story.content.type === 'facebook'"
+                        :videoID="item.story.content.value"
+                    ></fb-embed-video>
                     
                     <youtube
-                        v-else
+                        v-else-if="item.story.content.type === 'youtube'"
                         :video-id="item.story.content.value"
                         class="youtube-container"
                     ></youtube>
