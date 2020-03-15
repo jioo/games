@@ -3,6 +3,7 @@
 My gaming profile using Nuxt.js, Storyblok &amp; Vue-Cli-3
 
 [![paypal](https://img.shields.io/badge/paypal-donate-green.svg)](http://paypal.me/jjquiazon)
+![](https://github.com/jioo/games/workflows/GitHub%Pages/badge.svg)
 
 url: <a href="https://jioo.github.io/games" target="_blank">https://jioo.github.io/games</a>
 
