@@ -14,9 +14,6 @@ jobs:
       run: |
         npm install
         npm build
-        
-    - name: Create jekyll file
-      run: |
         cat dist/.nojekyll
 
     - name: Deploy
