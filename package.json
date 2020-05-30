@@ -10,6 +10,7 @@
   },
   "homepage": "https://jioo.github.io/games",
   "dependencies": {
+    "@mdi/font": "^5.3.45",
     "@nuxtjs/axios": "^5.3.3",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/markdownit": "^1.2.2",

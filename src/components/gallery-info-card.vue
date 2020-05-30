@@ -2,7 +2,7 @@
     <v-card md6>
         <v-toolbar color="orange">
             <v-btn icon @click.prevent="goBack()">
-                <v-icon>arrow_back</v-icon>
+                <v-icon>mdi-arrow-left</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
         </v-toolbar>

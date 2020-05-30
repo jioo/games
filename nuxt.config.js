@@ -28,6 +28,7 @@ module.exports = {
         '~/assets/css/styles.css',
         'vuetify/dist/vuetify.min.css',
         'roboto-fontface/css/roboto/roboto-fontface.css',
+        '@mdi/font/css/materialdesignicons.css',
         'material-design-icons-iconfont/dist/material-design-icons.css'
     ],
 

@@ -23,7 +23,7 @@
                 </v-flex>
                 <v-flex :class="{ 'md12 sm12 xs12': index !== 0, 'md8 sm8 xs8': index === 0 }">
                     <h2 class="orange--text">
-                        <span v-if="index !== 0"><v-icon color="orange">fiber_manual_record</v-icon>&nbsp;</span>
+                        <span v-if="index !== 0"><v-icon color="orange">mdi-chevron-right</v-icon>&nbsp;</span>
                         {{ listItem.game.story.name }} 
                     </h2>
                 </v-flex>

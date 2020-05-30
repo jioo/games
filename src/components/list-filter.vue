@@ -13,7 +13,7 @@
             </v-flex>
             <v-flex md6 sm12 xs12 :class="{ 'pt-2 mt-1': $vuetify.breakpoint.mdAndUp }">
                 <v-btn class="ml-0" @click.prevent="filterForm = !filterForm" >
-                    <v-icon>filter_list</v-icon>
+                    <v-icon>mdi-filter-variant</v-icon>
                     &nbsp; Filter
                 </v-btn>
             </v-flex>
