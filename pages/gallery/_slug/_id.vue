@@ -2,9 +2,9 @@
     <v-container grid-list-md fluid>
         <v-layout row wrap>
             <v-flex md12>
-                <no-ssr>
+                <client-only>
                     <gallery-info-card :item="item" />
-                </no-ssr>
+                </client-only>
             </v-flex>
         </v-layout>
     </v-container>
@@ -21,8 +21,8 @@ export default {
     async asyncData ({ app, params, store, error }) {
         store.dispatch('UPDATE_CACHE_VERSION')
         const { id, slug } = params
-        
-        const apiParams = { 
+
+        const apiParams = {
             resolve_links: 1,
             ...store.state.params
         }

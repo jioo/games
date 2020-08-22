@@ -1,14 +1,14 @@
 <template>
     <v-container grid-list-md fluid>
         <v-layout row wrap>
-            <v-flex 
-                md6 sm12 xs12 
-                v-for="item in data.stories" 
+            <v-flex
+                md6 sm12 xs12
+                v-for="item in data.stories"
                 :key="item.id"
             >
-                <no-ssr>
+                <client-only>
                     <top-list-item :item="item" />
-                </no-ssr>
+                </client-only>
             </v-flex>
         </v-layout>
     </v-container>

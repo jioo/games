@@ -3,7 +3,7 @@
         <v-layout row wrap class="mb-3">
             <v-flex md6 sm12 xs12>
                 <v-text-field
-                    box
+                    filled
                     v-model="filter.search"
                     color="orange"
                     hide-details
@@ -24,7 +24,7 @@
                 <v-layout row wrap>
                     <v-flex md3>
                         <v-combobox
-                            box
+                            filled
                             label="Platform"
                             clearable
                             v-model="filter.platform"
@@ -35,7 +35,7 @@
                     </v-flex>
                     <v-flex md3>
                         <v-select
-                            box
+                            filled
                             label="Sort by"
                             v-model="filter.sortBy"
                             :items="sortItems">
@@ -83,20 +83,20 @@ export default {
                 platform: '',
                 sortBy: 'name:asc'
             }
-            
+
             this.applyFilter()
         },
 
         applyFilter () {
             let filterParams = Object.assign({}, this.filter)
-            
+
             // map platforms array into string
             const { platform } = filterParams
             if(platform.length > 0) {
                 filterParams.platform = platform.map(m => m.uuid).join(",")
             }
 
-            this.$nuxt.$emit('APPLY_FILTER', filterParams) 
+            this.$nuxt.$emit('APPLY_FILTER', filterParams)
             this.filterForm = false
         }
     }

@@ -13,10 +13,10 @@ jobs:
       run: |
         npm install
         npm run build
-        
+
     - name: Create jekyll file
       run: |
-        cat dist/.nojekyll
+        touch dist/.nojekyll
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3

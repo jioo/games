@@ -2,9 +2,9 @@
     <v-container grid-list-md fluid>
         <v-layout row wrap>
             <v-flex md12>
-                <no-ssr>
+                <client-only>
                     <game-info-card :item="item" />
-                </no-ssr>
+                </client-only>
             </v-flex>
         </v-layout>
     </v-container>
@@ -21,7 +21,7 @@ export default {
     async asyncData ({ app, params, store, error }) {
         await store.dispatch('UPDATE_CACHE_VERSION')
         const { slug } = params
-        
+
         const apiParams = {
             resolve_relations: 'platforms',
             ...store.state.params

@@ -9,8 +9,9 @@
 
         <v-card-text>
             <v-layout row wrap>
-                <v-flex md6 sm12 xs12> 
+                <v-flex md6 sm12 xs12>
                     <v-img
+                        contain
                         :src="item.story.content.image"
                         lazy-src="/place-holder.jpg"
                         max-height="500">
@@ -34,7 +35,7 @@
 
                     <div id="mark-down" v-html="$md.render(markdown)" ></div>
                 </v-flex>
-                
+
             </v-layout>
         </v-card-text>
     </v-card>
