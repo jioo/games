@@ -14,13 +14,13 @@
                     <v-btn
                         text
                         class="px-5"
-                        width="210"
+                        width="140"
                         active-class="orange--text"
                         v-for="item in navigations.slice(0, 2)"
                         :key="`nav-${item.name}`"
                         :to="{ path: item.path }"
                     >
-                            {{ item.name }}
+                        {{ item.name }}
                     </v-btn>
                 </v-toolbar-items>
 
@@ -112,7 +112,7 @@ export default {
                 { name: 'My Gallery', path: '/gallery' },
                 { name: 'Top List', path: '/top-list' },
                 { name: 'IGN', path: '/ign' },
-                { name: 'RIG', path: '/ign' },
+                // { name: 'RIG', path: '/ign' },
             ]
         }
     },
