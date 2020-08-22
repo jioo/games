@@ -6,7 +6,7 @@
     "serve": "nuxt",
     "build": "nuxt generate",
     "lint": "vue-cli-service lint",
-    "deploy": "cat dist/.nojekyll && gh-pages -d dist"
+    "deploy": "touch dist/.nojekyll && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "homepage": "https://jioo.github.io/games",
   "dependencies": {
@@ -16,7 +16,6 @@
     "@nuxtjs/markdownit": "^1.2.2",
     "@nuxtjs/proxy": "^1.2.4",
     "axios": "^0.18.0",
-    "gh-pages": "^2.0.1",
     "material-design-icons-iconfont": "^3.0.3",
     "nuxt-edge": "^2.2.0-25662130.e115890",
     "roboto-fontface": "^0.10.0",
@@ -29,6 +28,7 @@
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
+    "push-dir": "^0.4.1",
     "vue-cli-plugin-nuxt-starter-template": "0.0.6",
     "vue-cli-plugin-vuetify": "^0.2.1",
     "vue-template-compiler": "^2.5.17"
