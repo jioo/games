@@ -3,9 +3,8 @@
   "version": "2.0.0",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "build": "nuxt generate",
+    "start": "nuxt start"
   },
   "homepage": "https://jioo.github.io/games",
   "dependencies": {
