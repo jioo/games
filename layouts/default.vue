@@ -2,15 +2,15 @@
     <v-app dark>
         <!-- APP HEADER -->
         <v-toolbar app fixed clipped-left height="80">
-            
-            <v-toolbar-side-icon 
-                class="hidden-md-and-up" 
+
+            <v-toolbar-side-icon
+                class="hidden-md-and-up"
                 @click.stop="drawer = !drawer"
             ></v-toolbar-side-icon>
 
             <!-- TOP NAVBAR -->
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn 
+                <v-btn
                     flat class="px-5"
                     active-class="orange--text"
                     v-for="item in navigations.slice(0, 2)"
@@ -22,7 +22,7 @@
             </v-toolbar-items>
 
             <v-spacer></v-spacer>
-            
+
             <v-toolbar-title :class="{ 'pt-3': true, 'pr-5': $vuetify.breakpoint.smAndDown }">
                 <img src="~/assets/jio.png" alt="jio">
             </v-toolbar-title>
@@ -30,7 +30,7 @@
             <v-spacer></v-spacer>
 
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn 
+                <v-btn
                     flat class="px-5"
                     active-class="orange--text"
                     v-for="item in navigations.slice(2)"
@@ -60,9 +60,9 @@
             <v-list>
                 <v-divider></v-divider>
                 <v-list-tile
-                    v-for="item in navigations" 
+                    v-for="item in navigations"
                     :key="`side-nav-${item.name}`"
-                    :to="{ path: item.path }"  
+                    :to="{ path: item.path }"
                     v-ripple active-class="orange--text"
                 >
                     <v-list-tile-content>
@@ -79,7 +79,7 @@
             </v-slide-x-transition>
             <scroll-to-top />
         </v-content>
-        
+
         <!-- APP FOOTER -->
         <v-footer class="text-xs-center py-3" height="auto">
             <v-layout>
@@ -89,7 +89,7 @@
                     <v-icon small class="red--text">favorite</v-icon>
                     by <span class="link orange--text" @click.prevent="redirect()">Justine Joshua Quiazon</span>
                     <v-icon small class="white--text">copyright</v-icon>
-                    2018 - 
+                    2018 -
                     {{ new Date().getFullYear() }}
                 </v-flex>
             </v-layout>

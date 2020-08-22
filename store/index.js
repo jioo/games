@@ -18,6 +18,7 @@ const createStore = () => {
         actions: {
             UPDATE_CACHE_VERSION({ commit, state }) {
                 return this.$axios.get('spaces/me', { params: { token: state.params.token } }).then((res) => {
+                    console.log(res)
                     commit('UPDATE_CACHE_VERSION', res.space.version)
                 })
             }
