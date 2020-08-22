@@ -5,16 +5,19 @@ export default {
     env: {
         publicToken: 'sGQamtNrNnpeyp0ac7AuGAtt'
     },
+
     /*
     ** Nuxt rendering mode
     ** See https://nuxtjs.org/api/configuration-mode
     */
     mode: 'universal',
+
     /*
     ** Nuxt target
     ** See https://nuxtjs.org/api/configuration-target
     */
     target: 'static',
+
     /*
     ** Headers of the page
     ** See https://nuxtjs.org/api/configuration-head
@@ -31,6 +34,7 @@ export default {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
+
     /*
     ** Global CSS
     */
@@ -41,6 +45,7 @@ export default {
         // '@mdi/font/css/materialdesignicons.css',
         'material-design-icons-iconfont/dist/material-design-icons.css'
     ],
+
     /*
     ** Plugins to load before mounting the App
     ** https://nuxtjs.org/guide/plugins
@@ -51,17 +56,20 @@ export default {
         { src: '~plugins/youtube.js', ssr: false },
         { src: '~plugins/vue-infinite-loading.js', ssr: false },
     ],
+
     /*
     ** Auto import components
     ** See https://nuxtjs.org/api/configuration-components
     */
     components: true,
+
     /*
     ** Nuxt.js dev-modules
     */
     buildModules: [
         '@nuxtjs/vuetify',
     ],
+
     /*
     ** Nuxt.js modules
     */
@@ -71,13 +79,6 @@ export default {
         '@nuxtjs/markdownit',
         '@nuxtjs/google-analytics'
     ],
-    /*
-    ** Axios module configuration
-    ** See https://axios.nuxtjs.org/options
-    */
-    // axios: {
-    //     baseURL: 'https://api.storyblok.com/v1/cdn/'
-    // },
 
     markdownit: {
         injected: true,
@@ -122,14 +123,12 @@ export default {
             }
         }
     },
+
     /*
     ** Build configuration
     ** See https://nuxtjs.org/api/configuration-build/
     */
     build: {
-        // babel: {
-        //     presets: ["@vue/app"]
-        // }
     },
 
     generate: {
