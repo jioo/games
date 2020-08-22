@@ -21,6 +21,8 @@
     "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.11.2"
+    "@nuxtjs/vuetify": "^1.11.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
   }
 }
