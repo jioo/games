@@ -1,47 +1,51 @@
 <template>
     <v-app dark>
         <!-- APP HEADER -->
-        <v-toolbar app fixed clipped-left height="80">
+        <v-sheet>
+            <v-toolbar fixed height="80">
 
-            <v-toolbar-side-icon
-                class="hidden-md-and-up"
-                @click.stop="drawer = !drawer"
-            ></v-toolbar-side-icon>
+                <v-app-bar-nav-icon
+                    class="hidden-md-and-up"
+                    @click.stop="drawer = !drawer"
+                ></v-app-bar-nav-icon>
 
-            <!-- TOP NAVBAR -->
-            <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn
-                    flat class="px-5"
-                    active-class="orange--text"
-                    v-for="item in navigations.slice(0, 2)"
-                    :key="`nav-${item.name}`"
-                    :to="{ path: item.path }"
-                >
-                        {{ item.name }}
-                </v-btn>
-            </v-toolbar-items>
+                <!-- TOP NAVBAR -->
+                <v-toolbar-items class="hidden-sm-and-down">
+                    <v-btn
+                        text
+                        class="px-5"
+                        active-class="orange--text"
+                        v-for="item in navigations.slice(0, 2)"
+                        :key="`nav-${item.name}`"
+                        :to="{ path: item.path }"
+                    >
+                            {{ item.name }}
+                    </v-btn>
+                </v-toolbar-items>
 
-            <v-spacer></v-spacer>
+                <v-spacer></v-spacer>
 
-            <v-toolbar-title :class="{ 'pt-3': true, 'pr-5': $vuetify.breakpoint.smAndDown }">
-                <img src="~/assets/jio.png" alt="jio">
-            </v-toolbar-title>
+                <v-toolbar-title :class="{ 'pt-3': true, 'pr-5': $vuetify.breakpoint.smAndDown }">
+                    <img src="~/assets/jio.png" alt="jio">
+                </v-toolbar-title>
 
-            <v-spacer></v-spacer>
+                <v-spacer></v-spacer>
 
-            <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn
-                    flat class="px-5"
-                    active-class="orange--text"
-                    v-for="item in navigations.slice(2)"
-                    :key="`nav-${item.name}`"
-                    :to="{ path: item.path }"
-                >
-                        {{ item.name }}
-                </v-btn>
-            </v-toolbar-items>
+                <v-toolbar-items class="hidden-sm-and-down">
+                    <v-btn
+                        text
+                        class="px-5"
+                        active-class="orange--text"
+                        v-for="item in navigations.slice(2)"
+                        :key="`nav-${item.name}`"
+                        :to="{ path: item.path }"
+                    >
+                            {{ item.name }}
+                    </v-btn>
+                </v-toolbar-items>
 
-        </v-toolbar>
+            </v-toolbar>
+        </v-sheet>
 
         <!-- SIDE NAVBAR -->
         <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up">
@@ -73,12 +77,12 @@
         </v-navigation-drawer>
 
         <!-- APP CONTENT -->
-        <v-content>
+        <v-main>
             <v-slide-x-transition mode="out-in">
                 <nuxt />
             </v-slide-x-transition>
             <scroll-to-top />
-        </v-content>
+        </v-main>
 
         <!-- APP FOOTER -->
         <v-footer class="text-xs-center py-3" height="auto">

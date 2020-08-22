@@ -7,23 +7,23 @@
 
             <v-layout row wrap>
                 <v-flex
-                    md2 sm3 xs6 
-                    d-flex  
-                    v-for="item in data.stories" 
+                    md2 sm3 xs6
+                    d-flex
+                    v-for="item in data.stories"
                     :key="item.id"
                 >
                     <game-card :item="item" />
                 </v-flex>
             </v-layout>
-        </v-container> 
+        </v-container>
 
-        <infinite-loading 
+        <infinite-loading
             v-if="isDataNull"
-            @infinite="infiniteHandler" 
+            @infinite="infiniteHandler"
             ref="infiniteLoading"
             class="mb-3"
         >
-            
+
             <span slot="no-more">&nbsp;</span>
             <span slot="no-results">&nbsp;</span>
 
@@ -32,7 +32,7 @@
             </v-flex>
 
         </infinite-loading>
-    </section> 
+    </section>
 </template>
 
 <script>
