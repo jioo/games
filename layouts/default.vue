@@ -14,6 +14,7 @@
                     <v-btn
                         text
                         class="px-5"
+                        width="210"
                         active-class="orange--text"
                         v-for="item in navigations.slice(0, 2)"
                         :key="`nav-${item.name}`"
@@ -35,6 +36,7 @@
                     <v-btn
                         text
                         class="px-5"
+                        width="140"
                         active-class="orange--text"
                         v-for="item in navigations.slice(2)"
                         :key="`nav-${item.name}`"
@@ -49,30 +51,29 @@
 
         <!-- SIDE NAVBAR -->
         <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up">
-            <v-list class="pa-1">
-                <v-list-tile avatar>
-                    <v-list-tile-avatar>
-                        <img src="~/assets/jio.png">
-                    </v-list-tile-avatar>
-
-                    <v-list-tile-content>
-                        <v-list-tile-title>Gamehub</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-
             <v-list>
+                <v-list-item>
+                    <v-list-item-avatar>
+                        <img src="~/assets/jio.png">
+                    </v-list-item-avatar>
+
+                    <v-list-item-content>
+                        <v-list-item-title>Gamehub</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
                 <v-divider></v-divider>
-                <v-list-tile
+
+                <v-list-item
                     v-for="item in navigations"
                     :key="`side-nav-${item.name}`"
                     :to="{ path: item.path }"
                     v-ripple active-class="orange--text"
                 >
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{ item.name }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
+                    <v-list-item-content>
+                        <v-list-item-title>{{ item.name }}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
             </v-list>
         </v-navigation-drawer>
 
@@ -85,7 +86,7 @@
         </v-main>
 
         <!-- APP FOOTER -->
-        <v-footer class="text-xs-center py-3" height="auto">
+        <v-footer class="text-center py-3" height="auto">
             <v-layout>
                 <v-flex xs12>
                     <v-icon small class="white--text">code</v-icon>
@@ -110,7 +111,8 @@ export default {
                 { name: 'Game List', path: '/' },
                 { name: 'My Gallery', path: '/gallery' },
                 { name: 'Top List', path: '/top-list' },
-                { name: 'IGN', path: '/ign' }
+                { name: 'IGN', path: '/ign' },
+                { name: 'RIG', path: '/ign' },
             ]
         }
     },

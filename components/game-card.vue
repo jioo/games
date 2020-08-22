@@ -1,12 +1,13 @@
 <template>
     <v-hover>
-        <v-card 
+        <v-card
             slot-scope="{ hover }"
             :class="`elevation-${hover ? 24 : 2}`">
             <v-img
                 :src="item.content.image"
                 lazy-src="/place-holder.jpg"
                 height="250"
+                width="500"
                 style="cursor: pointer;"
                 @click="redirectTo(item)">
                 <v-layout

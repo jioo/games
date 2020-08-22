@@ -2,7 +2,7 @@
     <section>
         <v-layout row wrap>
             <v-flex md12>
-                
+
             </v-flex>
 
             <v-flex md12>
@@ -24,8 +24,8 @@
                         :headers="headers"
                         :items="data.content.list"
                         :search="search"
-                        disable-initial-sort
-                        hide-actions
+                        sort-by
+                        hide-default-footer
                     >
                         <template slot="items" slot-scope="props">
                             <td>{{ props.item.game.story.name }}</td>
