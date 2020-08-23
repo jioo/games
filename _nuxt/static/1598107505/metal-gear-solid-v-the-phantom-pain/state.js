@@ -1,1 +1,0 @@
-window.__NUXT__={staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1598107505",layout:"default",error:null,state:{params:{token:"sGQamtNrNnpeyp0ac7AuGAtt",cv:1598107372}},serverRendered:true,routePath:"\u002Fmetal-gear-solid-v-the-phantom-pain",config:{}};
