@@ -1,1 +1,0 @@
-window.__NUXT__={staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1598153778",layout:"default",error:null,state:{params:{token:"sGQamtNrNnpeyp0ac7AuGAtt",cv:1598151873}},serverRendered:true,routePath:"\u002Fcastlevania-the-dracula-x-chronicles",config:{}};
