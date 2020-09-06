@@ -112,7 +112,7 @@ export default {
                 { name: 'My Gallery', path: '/gallery' },
                 { name: 'Top List', path: '/top-list' },
                 { name: 'IGN', path: '/ign' },
-                // { name: 'RIG', path: '/ign' },
+                // { name: 'RIG', path: '/rig' },
             ]
         }
     },
