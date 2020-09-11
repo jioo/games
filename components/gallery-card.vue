@@ -7,7 +7,7 @@
             <v-img
                 :src="showImageBaseOnType()"
                 lazy-src="/place-holder.jpg"
-                height="250"
+                height="350"
                 style="cursor: pointer;"
                 @click.prevent="redirectTo(item)"
             >
@@ -22,10 +22,10 @@
                     </v-layout>
 
                     <v-layout
-                        v-if="item.content.type !== 'image'" 
-                        column 
-                        align-center 
-                        justify-center 
+                        v-if="item.content.type !== 'image'"
+                        column
+                        align-center
+                        justify-center
                         fill-height
                     >
                         <v-icon x-large>play_circle_filled</v-icon>
@@ -74,7 +74,7 @@ export default {
                     break
             }
 
-            
+
             return result
         },
 

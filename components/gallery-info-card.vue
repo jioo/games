@@ -21,7 +21,6 @@
                         v-if="item.story.content.type === 'image'"
                         :src="item.story.content.value"
                         lazy-src="/place-holder.jpg"
-                        max-height="500"
                     >
                         <v-layout
                             slot="placeholder"
@@ -38,7 +37,7 @@
                         v-else-if="item.story.content.type === 'facebook'"
                         :videoID="item.story.content.value"
                     ></fb-embed-video>
-                    
+
                     <youtube
                         v-else-if="item.story.content.type === 'youtube'"
                         :video-id="item.story.content.value"
