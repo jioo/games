@@ -1,1 +1,0 @@
-window.__NUXT__={staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1600598073",layout:"default",error:null,state:{params:{token:"sGQamtNrNnpeyp0ac7AuGAtt",cv:1600006790}},serverRendered:true,routePath:"\u002Fmetal-gear-solid-4-guns-of-the-patriots",config:{}};
